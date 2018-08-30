@@ -1,25 +1,25 @@
 export class Reimb {
     reimb_id = 0;
-    amount = 0;
-    submitted = '';
-    resolved = '';
-    description = '';
-    author = 0;
-    resolver = 0;
-    status_id = 0;
-    type_id = 0;
+    reimb_amount = 0;
+    reimb_submitted = '';
+    reimb_resolved = '';
+    reimb_description = '';
+    reimb_author = 0;
+    reimb_resolver = 0;
+    reimb_status_id = 0;
+    reimb_type_id = 0;reimb_
 
-    constructor(reimb_id?: number, amount?: number, submitted?: string, 
-        resolved?: string, description?: string, author?: number, 
-        resolver?: number, status_id?: number, type_id?: number) {
+    constructor(reimb_id?: number, reimb_amount?: number, reimb_submitted?: string, 
+        reimb_resolved?: string, reimb_description?: string, reimb_author?: number, 
+        reimb_resolver?: number, reimb_status_id?: number, reimb_type_id?: number) {
             reimb_id && (this.reimb_id = reimb_id);
-            amount && (this.amount = amount);
-            submitted && (this.submitted = submitted);
-            resolved && (this.resolved = resolved);
-            description && (this.description = description);
-            author && (this.author = author);
-            resolver && (this.resolver = resolver);
-            status_id && (this.status_id = status_id);
-            type_id && (this.type_id = type_id);   
+            reimb_amount && (this.reimb_amount = reimb_amount);
+            reimb_submitted && (this.reimb_submitted = reimb_submitted);
+            reimb_resolved && (this.reimb_resolved = reimb_resolved);
+            reimb_description && (this.reimb_description = reimb_description);
+            reimb_author && (this.reimb_author = reimb_author);
+            reimb_resolver && (this.reimb_resolver = reimb_resolver);
+            reimb_status_id && (this.reimb_status_id = reimb_status_id);
+            reimb_type_id && (this.reimb_type_id = reimb_type_id);
         }
 }

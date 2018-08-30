@@ -10,11 +10,13 @@ export async function findAll(): Promise<User[]> {
     const client = await connectionPool.connect();
     try {
         const resp = await client.query(
-            `SELECT * FROM project1.ERS_USERS u, project1.ERS_REIMBURSEMENT r
-            WHERE u.ERS_USERS_ID = r.REIMB_AUTHOR;`);
+            `SELECT * FROM project1.ERS_REIMBURSEMENT r
+            LEFT JOIN project1.ERS_USERS u
+            ON u.ers_users_id = r.reimb_author`);
         
         const users = [];
         resp.rows.forEach((user_reimb_result) => {
+            console.log(user_reimb_result);
             const reimb = reimbConverter(user_reimb_result);
             const exists = users.some( existingUser => {
                 if(user_reimb_result.ers_users_id === existingUser.ers_users_id) {
@@ -88,7 +90,8 @@ export async function create(user: User): Promise<number> {
             `INSERT INTO project1.ers_users
             (ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id)
             VALUES ($1, $2, $3, $4, $5, $6)
-            RETURNING ers_user_id`, [user.username, user.password, user.first_name, user.last_name, user.email, user.user_role_id]);
+            RETURNING ers_users_id`, [user.ers_username, user.ers_password, user.user_first_name, 
+                                    user.user_last_name, user.user_email, user.user_role_id]);
         return resp.rows[0].ers_user_id;
     } finally {
         client.release();

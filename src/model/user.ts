@@ -1,23 +1,23 @@
 import { Reimb } from "./reimb";
 export class User {
-    user_id = 0;
-    username = '';
-    password = '';
-    first_name = '';
-    last_name = '';
-    email = '';
+    ers_users_id = 0;
+    ers_username = '';
+    ers_password = '';
+    user_first_name = '';
+    user_last_name = '';
+    user_email = '';
     user_role_id = 0;
     reimbs: Reimb[] = [];
 
-    constructor(user_id?: number, username?: string, password?: string, first_name?: string, 
-        last_name?:string, email?: string, user_role_id?: number, reimbs?: Reimb[]) {
-        user_id && (this.user_id = user_id);
-        username && (this.username = username);
-        password && (this.password = password);
-        first_name && (this.first_name = first_name);
-        last_name && (this.last_name = last_name);
-        email && (this.email = email);
-        user_role_id && (this.user_role_id);
+    constructor(ers_users_id?: number, ers_username?: string, ers_password?: string, user_first_name?: string, 
+        user_last_name?:string, user_email?: string, user_role_id?: number, reimbs?: Reimb[]) {
+        ers_users_id && (this.ers_users_id = ers_users_id);
+        ers_username && (this.ers_username = ers_username);
+        ers_password && (this.ers_password = ers_password);
+        user_first_name && (this.user_first_name = user_first_name);
+        user_last_name && (this.user_last_name = user_last_name);
+        user_email && (this.user_email = user_email);
+        user_role_id && (this.user_role_id = user_role_id);
         reimbs && (this.reimbs = reimbs);
     }
 }
