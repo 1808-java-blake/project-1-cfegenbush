@@ -1,0 +1,27 @@
+Sign in page
+    register button
+        register component
+            create user form
+Sign in page
+Manager
+    Manager home
+        Manager Nav
+            View User's reimbs
+            View pending requests
+            Approve/deny reimb
+            Log out
+Employee
+    Employee home
+        Employee Nav
+            View pending
+            View History
+            Submit Request
+            Log out
+
+in app.tsx have a browser router for either 
+a.)employee
+b.)Manager
+also have the sign in on this page
+
+each one will have its own version of the app
+all I have to do is determine if they are an employee or Manager 

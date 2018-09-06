@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class ReimbsComponent extends React.Component<any, any> {
+export class ManagerViewPending extends React.Component<any, any> {
     public constructor(props: any) {
         super(props);
         this.state = {
@@ -26,7 +26,6 @@ export class ReimbsComponent extends React.Component<any, any> {
             <table className="table table-striped table-dark cl" id="reimb-table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Date Submitted</th>
                         <th scope="col">Date Resolved</th>
@@ -35,6 +34,7 @@ export class ReimbsComponent extends React.Component<any, any> {
                         <th scope="col">Resolver</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
+                        <th scope="col">Approve/Deny</th>
                     </tr>
                 </thead>
                 <tbody id="reimb-table-body">
@@ -49,6 +49,13 @@ export class ReimbsComponent extends React.Component<any, any> {
                                 <td>{reimb.reimb_resolver}</td>
                                 <td>{reimb.reimb_status_id}</td>
                                 <td>{reimb.reimb_type_id}</td>
+                                <td><button type="button" className="btn btn-default btn-lg">
+                                        <span className="glyphicon glyphicon-ok" aria-hidden="true"></span> ok
+                                    </button>
+                                    <button type="button" className="btn btn-default btn-lg">
+                                        <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> remove
+                                    </button>
+                                </td>
                             </tr>
                         ))
                     }

@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-export class ReimbsComponent extends React.Component<any, any> {
+interface IState {
+    reimbs: any
+}
+
+export class EmployeeViewHistory extends React.Component<any, IState> {
     public constructor(props: any) {
         super(props);
         this.state = {
@@ -26,7 +30,6 @@ export class ReimbsComponent extends React.Component<any, any> {
             <table className="table table-striped table-dark cl" id="reimb-table">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Date Submitted</th>
                         <th scope="col">Date Resolved</th>

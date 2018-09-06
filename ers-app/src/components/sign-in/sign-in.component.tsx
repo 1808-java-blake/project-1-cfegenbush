@@ -71,7 +71,11 @@ export class SignInComponent extends React.Component<RouteComponentProps<{}>, IS
       })
       .then(resp => {
         localStorage.setItem('user', JSON.stringify(resp));
-        this.props.history.push('/home');
+        if (resp.user_role_id === 1) {
+          this.props.history.push('/employee');
+        } else {
+          this.props.history.push('/manager');
+        }
       })
       .catch(err => {
         console.log(err);
