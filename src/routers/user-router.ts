@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import express from 'express';
 import * as userDao from '../dao/user-dao';
 
-// all routes defined with this object will imply /
+// all routes defined with this object will imply /users
 export const userRouter = express.Router();
 
 /**

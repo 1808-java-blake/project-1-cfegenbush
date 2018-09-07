@@ -1,10 +1,11 @@
 import { Pool, Client } from 'pg';
 
 export const connectionPool = new Pool({
-    user: 'postgres',
-    host: 'revature-1808.caxggqcyvxvq.us-east-2.rds.amazonaws.com',
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
     database: 'postgres',
-    password: 'Jbpjungin!22',
+    password: process.env.PGPASSWORD,
     port: 5432,
+    max: 2
 
 })

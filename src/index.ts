@@ -5,12 +5,13 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import { userRouter} from './routers/user-router';
 import { reimbRouter } from './routers/reimb-router';
+require("dotenv").config();
 
 // create the app object from express
 const app = express();
 
 // set the port
-const port = 3000; // will use port from computers environment variables or 3000 if there is none
+const port = process.env.PORT || 3000; // will use port from computers environment variables or 3000 if there is none
 app.set('port', port);
 
 const sess = {
