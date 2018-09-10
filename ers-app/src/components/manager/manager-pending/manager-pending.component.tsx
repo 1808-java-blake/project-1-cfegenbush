@@ -57,7 +57,7 @@ export class ManagerViewPending extends React.Component<any, IState> {
                             this.state.reimbs.map((reimb: any) => (
                                 <tr key={reimb.reimb_id} onClick={() => this.rowSelected(reimb.reimb_id)}>
                                     <td>{reimb.reimb_id}</td>
-                                    <td>{reimb.reimb_amount}</td>
+                                    <td>${reimb.reimb_amount}</td>
                                     <td>{reimb.reimb_submitted}</td>
                                     <td>{reimb.reimb_resolved}</td>
                                     <td>{reimb.reimb_description}</td>
@@ -70,7 +70,7 @@ export class ManagerViewPending extends React.Component<any, IState> {
                         }
                     </tbody>
                 </table>
-                <p>{this.state.selectedReimb}</p>
+                <p id="selected-reimb">Selected Reimbursement: {this.state.selectedReimb}</p>
                 <ADButtonsComponent selectedReimb={this.state.selectedReimb} />
             </div>
         );

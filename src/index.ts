@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 
 // allow static content to be served, navigating to url with nothing after / will serve index.html from public
 app.use(
-    express.static(path.join(__dirname, 'public'))
+    express.static(path.join(__dirname, 'sign-in'))
 );
 
 // use the body parser to convert request json

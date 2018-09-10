@@ -43,6 +43,7 @@ reimbRouter.get('/pending/userid=:id', [
         try {
             console.log(`retrieving pending reimbs for user: ${id}`);
             let reimbs = await reimbDao.findUsersPending(id);
+            console.log(reimbs);
             resp.json(reimbs);
         } catch (err) {
             console.log(err);
@@ -51,23 +52,24 @@ reimbRouter.get('/pending/userid=:id', [
     }]);
 
 /**
- * Find reimb by id
+ * Find reimbs by author
  */
-reimbRouter.get('/:id', async(req, resp) => {
-    const id = +req.params.id;
-    console.log(`retreiving reimb with id ${id}`);
-    try {
-        let reimb = await reimbDao.findById(id);
-        if (reimb !== undefined) {
-            resp.json(reimb);
-        } else {
-            resp.sendStatus(400);
+reimbRouter.get('/:id', [ 
+    async(req: Request, resp: Response) => {
+        const id = +req.params.id;
+        console.log(`retreiving reimbs with author ${id}`);
+        try {
+            let reimbs = await reimbDao.findById(id);
+            if (reimbs !== undefined) {
+                resp.json(reimbs);
+            } else {
+                resp.sendStatus(400);
+            }
+        } catch (err) {
+            console.log(err);
+            resp.sendStatus(500);
         }
-    } catch (err) {
-        console.log(err);
-        resp.sendStatus(500);
-    }
-});
+}]);
 
 /**
  * Create Reimb
@@ -75,8 +77,22 @@ reimbRouter.get('/:id', async(req, resp) => {
 reimbRouter.post('/submit-reimb', [
     async(req, resp) => {
         try {
-            console.log(req.body);
             const id = await reimbDao.createReimb(req.body);
+            resp.status(201);
+            resp.json(id);
+        } catch (err) {
+            console.log(err);
+            resp.sendStatus(500);
+        }
+    }]);
+
+/**
+ * Update a reimb upon approval/denial
+ */
+reimbRouter.post('/update', [
+    async(req, resp) => {
+        try {
+            const id = await reimbDao.updateReimb(req.body);
             resp.status(201);
             resp.json(id);
         } catch (err) {

@@ -1,6 +1,6 @@
 -- only two user roles - 1 = employee, 2 = finance manager
-INSERT INTO project1.ERS_USER_ROLES (USER_ROLE) VALUES ('Employee');
-INSERT INTO project1.ERS_USER_ROLES (USER_ROLE) VALUES ('Manager');
+INSERT INTO project1.ERS_USER_ROLES (ERS_USER_ROLE_ID, USER_ROLE) VALUES (1, 'Employee');
+INSERT INTO project1.ERS_USER_ROLES (ERS_USER_ROLE_ID, USER_ROLE) VALUES (2, 'Manager');
 
 -- only three reimbursement statuses - 1 = pending, 2 = approved, 3 = denied
 INSERT INTO project1.ERS_REIMBURSEMENT_STATUS (REIMB_STATUS) VALUES ('Pending');
@@ -17,6 +17,11 @@ INSERT INTO project1.ERS_REIMBURSEMENT_TYPE (REIMB_TYPE) VALUES ('OTHER');
 INSERT INTO project1.ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME, 
 USER_LAST_NAME, USER_EMAIL, USER_ROLE_ID) VALUES
 ('emp1', 'test', 'john', 'buck', 'jb@gmail.com', 1);
+
+-- test user - employee 2
+INSERT INTO project1.ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME, 
+USER_LAST_NAME, USER_EMAIL, USER_ROLE_ID) VALUES
+('emp2', 'test', 'jim', 'fawn', 'jf@gmail.com', 1);
 
 -- test user - manager
 INSERT INTO project1.ERS_USERS (ERS_USERNAME, ERS_PASSWORD, USER_FIRST_NAME, 

@@ -18,9 +18,9 @@ export class EmployeeComponent extends React.Component {
                             <Route path="/employee-home" component={EmployeeHome} />
                             <Route path="/employee-view-history" component={EmployeeViewHistory} />
                             <Route path="/employee-pending" component={EmployeeViewPending} />
-                            <Route path="/employee-submit-reimb" component={EmployeeSubmitReimb} />                        
-                        </Switch>
-                        <p> Employee component routes employee components</p>            
+                            <Route path="/employee-submit-reimb" component={EmployeeSubmitReimb} />
+                            <Route component={EmployeeHome} />                        
+                        </Switch>          
                     </div>
                 </div>
             </BrowserRouter>

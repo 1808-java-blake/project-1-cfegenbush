@@ -28,7 +28,7 @@ export class ManagerViewUserHistory extends React.Component<IProps, any> {
                     {
                         this.props.reimbs.map((reimb: any) => (
                             <tr key={reimb.reimb_id}>
-                                <td>{reimb.reimb_amount}</td>
+                                <td>${reimb.reimb_amount}</td>
                                 <td>{reimb.reimb_submitted}</td>
                                 <td>{reimb.reimb_resolved}</td>
                                 <td>{reimb.reimb_description}</td>

@@ -10,7 +10,7 @@ class App extends React.Component {
   public render() {
     return (
       <BrowserRouter>
-        <div id="sign-in-container">
+        <div id="app-main">
           <Switch>                
             <Route path="/sign-in" component={SignInComponent} />
             <Route path="/employee" component={EmployeeComponent} />

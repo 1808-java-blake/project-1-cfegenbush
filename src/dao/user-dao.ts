@@ -10,23 +10,19 @@ export async function findAll(): Promise<User[]> {
     const client = await connectionPool.connect();
     try {
         const resp = await client.query(
-            `SELECT * FROM project1.ERS_REIMBURSEMENT r
-            LEFT JOIN project1.ERS_USERS u
-            ON u.ers_users_id = r.reimb_author`);
+            `SELECT * FROM project1.ERS_USERS
+             WHERE USER_ROLE_ID = 1`);
         
         const users = [];
         resp.rows.forEach((user_reimb_result) => {
             console.log(user_reimb_result);
-            const reimb = reimbConverter(user_reimb_result);
             const exists = users.some( existingUser => {
                 if(user_reimb_result.ers_users_id === existingUser.ers_users_id) {
-                    reimb.reimb_id && existingUser.reimbs.push(reimb);
                     return true;
                 }
             })
             if (!exists) {
                 const newUser = userConverter(user_reimb_result);
-                reimb.reimb_id && newUser.reimbs.push(reimb);
                 users.push(newUser);
             }
         })

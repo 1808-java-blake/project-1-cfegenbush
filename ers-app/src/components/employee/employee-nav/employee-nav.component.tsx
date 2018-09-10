@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export const EmployeeNav: React.StatelessComponent<{}> = () => {
   return (
     <div>
-      <nav className="navbar navbar-toggleable-md navbar-expand-lg navbar-light bg-light display-front nav-pad">
+      <nav className="navbar navbar-toggleable-md navbar-expand-lg navbar-dark bg-dark display-front nav-pad">
         <div className="navbar-header c-pointer shift-left">
         </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">

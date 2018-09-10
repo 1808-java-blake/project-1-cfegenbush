@@ -16,9 +16,9 @@ export class ManagerComponent extends React.Component {
                         <Switch>
                             <Route path="/manager-home" component={ManagerHome} />
                             <Route path="/manager-view-users" component={ManagerViewUsers} />
-                            <Route path="/manager-view-pending" component={ManagerViewPending} />                                                        
+                            <Route path="/manager-view-pending" component={ManagerViewPending} />
+                            <Route component={ManagerHome} />                                                        
                         </Switch>
-                        <p> Manager component needs to route manager components</p>
                     </div>
                 </div>
             </BrowserRouter>

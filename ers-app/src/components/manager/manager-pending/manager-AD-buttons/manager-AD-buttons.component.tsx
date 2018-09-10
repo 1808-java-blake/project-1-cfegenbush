@@ -28,7 +28,8 @@ export class ADButtonsComponent extends React.Component<IProps, any> {
                 ...this.state,
                 errorMessage: 'Invalid something'
               });
-            } else if (resp.status === 201) {  
+            } else if (resp.status === 201) {
+              alert('Approved!');  
               return resp.json();
             } else {
               this.setState({
@@ -65,7 +66,8 @@ export class ADButtonsComponent extends React.Component<IProps, any> {
                 ...this.state,
                 errorMessage: 'Invalid something'
               });
-            } else if (resp.status === 201) {  
+            } else if (resp.status === 201) {
+              alert('Denied!');  
               return resp.json();
             } else {
               this.setState({
@@ -85,13 +87,9 @@ export class ADButtonsComponent extends React.Component<IProps, any> {
 
     public render() {
         return (
-            <div>
-                <button type="button" className="btn btn-default btn-lg" onClick={() => this.approve()}>
-                    <span className="glyphicon glyphicon-ok" aria-hidden="true"></span> ok
-                </button>
-                <button type="button" className="btn btn-default btn-lg" onClick={() => this.deny()}>
-                    <span className="glyphicon glyphicon-remove" aria-hidden="true"></span> remove
-                </button>                
+            <div id="AD-buttons">
+              <button type="button" className="approve-btn btn btn-success" onClick={() => this.approve()}>Approve</button>
+              <button type="button" className="btn btn-danger" onClick={() => this.deny()}>Deny</button>
             </div>
         )
     }

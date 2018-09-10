@@ -44,7 +44,7 @@ export class EmployeeViewPending extends React.Component<any,IState> {
                     {
                         this.state.reimbs.map((reimb: any) => (
                             <tr key={reimb.reimb_id}>
-                                <td>{reimb.reimb_amount}</td>
+                                <td>${reimb.reimb_amount}</td>
                                 <td>{reimb.reimb_submitted}</td>                                
                                 <td>{reimb.reimb_description}</td>                                                                
                                 <td>{reimb.reimb_status_id}</td>

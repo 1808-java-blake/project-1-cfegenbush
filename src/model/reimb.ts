@@ -6,12 +6,12 @@ export class Reimb {
     reimb_description = '';
     reimb_author = 0;
     reimb_resolver = 0;
-    reimb_status_id = 0;
-    reimb_type_id = 0;reimb_
+    reimb_status_id = '';
+    reimb_type_id = '';
 
     constructor(reimb_id?: number, reimb_amount?: number, reimb_submitted?: string, 
         reimb_resolved?: string, reimb_description?: string, reimb_author?: number, 
-        reimb_resolver?: number, reimb_status_id?: number, reimb_type_id?: number) {
+        reimb_resolver?: number, reimb_status_id?: string, reimb_type_id?: string) {
             reimb_id && (this.reimb_id = reimb_id);
             reimb_amount && (this.reimb_amount = reimb_amount);
             reimb_submitted && (this.reimb_submitted = reimb_submitted);
